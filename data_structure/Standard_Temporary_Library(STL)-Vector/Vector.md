@@ -39,6 +39,8 @@
 | `replace(v.begin(),v.end(),a,b)`    | Replace all `a` with `b`. (Not a member of vector class)     | O(N)            |
 | `find(v.begin(),v.end(),V)`         | Find value `V`. (Not a member of vector class)               | O(N)            |
 
+reserve(v.begin(),v.end())
+
 ---
 
 ## 4. Element Access
