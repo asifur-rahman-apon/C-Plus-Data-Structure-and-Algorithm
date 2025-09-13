@@ -15,7 +15,7 @@ void insert_at_any_pos(Node *&head, int idx, int val)
 {
     Node *newnode = new Node(val);
     Node *temp = head;
-    for (int i = 1; i < idx; i++)
+    for (int i = 1; i < idx; i++) // we count index from 0 just like array. (int i = 0; i < idx-1; i++)
     {
         temp = temp->next;
         if (temp == NULL) // if any one give a invalid index like more than the list size

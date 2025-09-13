@@ -11,14 +11,14 @@ public:
         next = NULL;
     }
 };
-void reverse(Node *temp) // recursion
+void print_reverse(Node *temp) // recursion
 {
     if (temp == NULL) // base case
     {
         return;
     }
 
-    reverse(temp->next);
+    print_reverse(temp->next);
     cout << temp->val << endl;
 }
 int main()
@@ -34,7 +34,7 @@ int main()
     b->next = c;
     c->next = d;
 
-    reverse(head);
+    print_reverse(head);
 
     return 0;
 }
