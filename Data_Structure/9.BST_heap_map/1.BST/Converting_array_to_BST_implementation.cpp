@@ -37,8 +37,33 @@ void level_order(Node *root)
         }
     }
 }
+
+Node *convert(int a[], int l, int r)
+{
+    if (l > r)
+    {
+        return NULL;
+    }
+    int mid = (l + r) / 2;
+    Node *root = new Node(a[mid]);
+    Node *leftroot = convert(a, l, mid - 1);
+    Node *rightnode = convert(a, mid + 1, r);
+    root->left = leftroot;
+    root->right = rightnode;
+    return root;
+}
+
 int main()
 {
-
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    sort(a, a + n);
+    Node *root = convert(a, 0, n - 1);
+    level_order(root);
     return 0;
 }
